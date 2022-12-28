@@ -1,0 +1,401 @@
+{
+	"info": {
+		"_postman_id": "54d39d6a-6772-403a-bd0d-e81bebe65fa6",
+		"name": "Desafio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14852327"
+	},
+	"item": [
+		{
+			"name": "Filme",
+			"item": [
+				{
+					"name": "API Externa",
+					"item": [
+						{
+							"name": "Buscar filme por personagem API Externa",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/movies/filter/character?characterName=Chewbacca",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"filter",
+										"character"
+									],
+									"query": [
+										{
+											"key": "characterName",
+											"value": "Chewbacca"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar filmes por nome API externa",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/movies/filter/title?title=Revenge of the Sith",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"filter",
+										"title"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "Revenge of the Sith"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar filmes por nome API externa Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/movies/filter/episode?episodeId=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"filter",
+										"episode"
+									],
+									"query": [
+										{
+											"key": "episodeId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Criar filme",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movieName\": \"Filminho 2\",\r\n    \"movieDescription\": \"Lorem Ipsum\",\r\n    \"peopleId\": [\r\n    {\r\n     \"peopleId\": 1\r\n    },\r\n    {\r\n     \"peopleId\": 2\r\n    }]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar filme",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movieId\":2,\r\n    \"movieName\": \"Filminho 2\",\r\n    \"movieDescription\": \"Lorem Ipsum\",\r\n    \"peopleId\": [\r\n    {\r\n     \"peopleId\": 1\r\n    },\r\n    {\r\n     \"peopleId\": 2\r\n    }]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar filme por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies/find/id?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"find",
+								"id"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar filme por nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies/find/name?name=Sabre Dourado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"find",
+								"name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Sabre Dourado"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar filmes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies/find/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"find",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Personagem",
+			"item": [
+				{
+					"name": "API Externa",
+					"item": [
+						{
+							"name": "Buscar por nome API Externa",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/people/filter/name?name=Luke",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"people",
+										"filter",
+										"name"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Luke"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Criar personagem",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"peopleName\": \"Luke Skywalker\",\r\n    \"movieId\": [\r\n    {\r\n     \"movieId\": 1\r\n    },\r\n    {\r\n     \"movieId\": 2\r\n    }]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/people",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"people"
+							],
+							"query": [
+								{
+									"key": "password",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar personagem",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"peopleId\": 1,\r\n    \"peopleName\": \"Luke Skywalker\",\r\n    \"movieId\": [\r\n    {\r\n     \"movieId\": 1\r\n    },\r\n    {\r\n     \"movieId\": 2\r\n    }]\r\n\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/people",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"people"
+							],
+							"query": [
+								{
+									"key": "password",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/find/name?name=Luke",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"find",
+								"name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Luke"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/find/id?peopleId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"find",
+								"id"
+							],
+							"query": [
+								{
+									"key": "peopleId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
